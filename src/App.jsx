@@ -70,7 +70,7 @@ var TableColumns = React.createClass({
 var InitTable = React.createClass({
   listenables: Actions,
   getInitialState: function(){
-    return {};
+    return {pathState: 0};
   },
   onData: function(){
     var self = this;
@@ -125,9 +125,12 @@ var InitTable = React.createClass({
         height={800}
         headerHeight={50}
         onRowClick={function(event, index){
-            console.log(self.state.data[index])
+            //console.log(self.state.data[index])
+            var pathState  = self.state.pathState;
+            pathState++;
             params = self.state.data[index]
-            Actions.rowClick(_config.path[1], params)
+            Actions.rowClick(_config.path[pathState], params)
+            self.setState({pathState: pathState});
             /*
           jQuery.get("http://localhost:3001/patients/"+self.state.data[index].Collection, function(data){
             //console.log(data);
