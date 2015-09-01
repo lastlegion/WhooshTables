@@ -1,0 +1,20 @@
+{
+
+  "path": [
+    {
+      "name": "Collections",
+      "dataUrl": "http://localhost:3001/collections"
+    },
+    {
+      "name": "Patients",
+      "dataUrl": "http://localhost:3001/patients/",
+      "params": "Collection"
+    },
+    {
+      "name": "PatientStudy",
+      "dataUrl": "http://localhost:3001/patientStudy/",
+      "params": "PatientID"
+
+    }
+  ]
+}
